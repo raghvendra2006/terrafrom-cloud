@@ -4,6 +4,6 @@ resource "tls_private_key" "ec2_key" {
 }
 
 resource "aws_key_pair" "ec2_key" {
-  key_name   = "${var.key_name_prefix}-${terraform.workspace}"
+  key_name   = "${terraform.workspace}_ec2-key"
   public_key = tls_private_key.ec2_key.public_key_openssh
 }
