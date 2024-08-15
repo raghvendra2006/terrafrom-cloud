@@ -6,7 +6,6 @@ resource "aws_instance" "web_server" {
   ami           = data.aws_ami.latest_amazon_linux_2.id
   instance_type = var.instance_type
   key_name      = aws_key_pair.ec2_key.key_name
-  volume_type   = "gp3"
   security_groups = [aws_security_group.web_sg.name]
 
   user_data = <<-EOF
