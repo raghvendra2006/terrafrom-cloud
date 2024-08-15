@@ -12,8 +12,3 @@ variable "ami_id" {
   description = "AMI ID for the EC2 instance"
   default     = "ami-0a4eaf6c4454eda75"  # Amazon Linux 2 AMI
 }
-
-variable "key_name" {
-  description = "EC2 Key Pair name"
-  type        = string
-}
