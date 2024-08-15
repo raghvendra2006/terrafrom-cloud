@@ -2,28 +2,23 @@ provider "aws" {
   region = var.aws_region
 }
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-  }
-}
-
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.amazon_linux.id
+resource "aws_instance" "web_server" {
+  ami           = var.ami_id
   instance_type = var.instance_type
+  key_name      = var.key_name
+  security_groups = [aws_security_group.web_sg.name]
 
   user_data = <<-EOF
-    #!/bin/bash
-    sudo yum update -y
-    sudo yum install httpd -y
-    sudo systemctl enable httpd
-    sudo systemctl start httpd
-    echo "<html><body><div>Hello, world!</div></body></html>" > /var/www/html/index.html
-    EOF
+              #!/bin/bash
+              yum update -y
+              amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+              yum install -y httpd mod_ssl
+              systemctl start httpd
+              systemctl enable httpd
+              echo "Instance ID: $(curl http://169.254.169.254/latest/meta-data/instance-id)" > /var/www/html/index.html
+              EOF
 
-  tags = var.tags
+  tags = {
+    Name = "WebServer"
+  }
 }
