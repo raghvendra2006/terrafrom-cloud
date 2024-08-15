@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "web_server" {
   ami           = var.ami_id
   instance_type = var.instance_type
-  key_name      = var.key_name
+  key_name      = aws_key_pair.ec2_key.key_name
   security_groups = [aws_security_group.web_sg.name]
 
   user_data = <<-EOF
