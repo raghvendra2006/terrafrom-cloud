@@ -1,17 +1,19 @@
+variable "region" {
+  description = "AWS region"
+  default     = "ap-south-1"
+}
+
 variable "instance_type" {
-  description = "Type of EC2 instance to use"
+  description = "EC2 instance type"
   default     = "t2.micro"
-  type        = string
 }
 
-variable "tags" {
-  description = "Tags for instances"
-  type        = map(any)
-  default     = {}
+variable "ami_id" {
+  description = "AMI ID for the EC2 instance"
+  default     = "ami-0a4eaf6c4454eda75"  # Amazon Linux 2 AMI
 }
 
-variable "aws_region" {
+variable "key_name" {
+  description = "EC2 Key Pair name"
   type        = string
-  default     = "us-east-2"
-  description = "AWS region for all resources"
 }
