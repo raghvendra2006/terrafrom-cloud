@@ -20,6 +20,7 @@ volume_type = "gp3"
               yum install -y httpd mod_ssl
               systemctl start httpd
               systemctl enable httpd
+              sudo yum install certbot python2-certbot-nginx -y  # Amazon Linux 2
               echo "Instance ID: $(curl http://169.254.169.254/latest/meta-data/instance-id)" > /var/www/html/index.html
               EOF
 
