@@ -24,7 +24,7 @@ resource "aws_instance" "web_server" {
               EOF
 
   tags = {
-    Name = "WebServer"
+  Name = "WebServer"
   Costcode = "0217"
   Owner = "Raghvendra"
   }
@@ -32,6 +32,6 @@ metadata_options {
     http_endpoint               = "enabled"
     http_tokens                 = "required"
     http_put_response_hop_limit = 1
-    instance_metadata_tags      = "enabled"
+    instance_metadata_tags      = "disabled"
   }
 }
