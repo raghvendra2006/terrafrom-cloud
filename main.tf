@@ -12,11 +12,6 @@ resource "aws_instance" "web_server" {
   throughput = 125
   volume_type = "gp3"
 }
-  tags = {
-  Costcode = "0217"
-  Owner = "Raghvendra"
-}
-
   user_data = <<-EOF
               #!/bin/bash
               yum update -y
@@ -30,5 +25,7 @@ resource "aws_instance" "web_server" {
 
   tags = {
     Name = "WebServer"
+  Costcode = "0217"
+  Owner = "Raghvendra"
   }
 }
