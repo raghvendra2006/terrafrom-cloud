@@ -28,4 +28,7 @@ resource "aws_instance" "web_server" {
   Costcode = "0217"
   Owner = "Raghvendra"
   }
+metadata_options = {
+  http_tokens = "required"
+}
 }
