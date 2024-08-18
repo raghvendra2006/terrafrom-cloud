@@ -12,9 +12,9 @@ resource "aws_instance" "web_server" {
   throughput = 125
   volume_type = "gp3"
 }
-  tags : {
-  Costcode : "0217"
-  Owner : "Raghvendra"
+  tags = {
+  Costcode = "0217"
+  Owner = "Raghvendra"
 }
 
   user_data = <<-EOF
