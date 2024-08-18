@@ -28,7 +28,10 @@ resource "aws_instance" "web_server" {
   Costcode = "0217"
   Owner = "Raghvendra"
   }
-metadata_options = {
-  http_tokens = "required"
-}
+metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 1
+    instance_metadata_tags      = "enabled"
+  }
 }
