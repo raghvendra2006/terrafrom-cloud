@@ -7,8 +7,6 @@ resource "aws_instance" "web_server" {
   instance_type = var.instance_type
   key_name      = aws_key_pair.ec2_key.key_name
   security_groups = [aws_security_group.web_sg.name]
-  associate_public_ip_address = true
-  instance_state = "running"
   root_block_device {
   iops = 3000
   throughput = 125
