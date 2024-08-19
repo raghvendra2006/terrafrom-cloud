@@ -21,3 +21,9 @@ variable "sg_name" {
   type        = string
   default     = "example-security-group"
 }
+
+variable "region1" {
+  description = "The AWS region where the VPC will be created"
+  type        = string
+  default     = "ap-south-1"
+}
