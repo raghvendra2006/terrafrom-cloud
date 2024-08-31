@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.region1
-}
-
 module "vpc1" {
   source    = "./modules/vpc"
   cidr_block = "10.10.10.0/24"
