@@ -54,7 +54,7 @@ resource "aws_eks_fargate_profile" "fargate" {
   cluster_name           = aws_eks_cluster.eks.name
   fargate_profile_name   = "fargate-profile"
   pod_execution_role_arn = aws_iam_role.eks_fargate_role.arn
-  subnet_ids             = ["subnet-0417f0c5554f6dd3b", "subnet-0fdce314086a09f40"]
+  subnet_ids             = ["subnet-0cf730cc22462b7dc"]
 
   selector {
     namespace = "default"
