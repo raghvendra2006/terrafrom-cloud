@@ -24,7 +24,7 @@ resource "aws_eks_cluster" "eks" {
   version  = "1.29"  # Updated to EKS version 1.29
 
   vpc_config {
-    subnet_ids = ["subnet-0417f0c5554f6dd3b"]
+    subnet_ids = ["subnet-0417f0c5554f6dd3b", "vpc-0bd5f385494b4cbec"]
   }
 
   depends_on = [aws_iam_role_policy_attachment.eks_cluster_policy]
