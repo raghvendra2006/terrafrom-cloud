@@ -2,14 +2,11 @@ data "aws_ami" "amazon_linux_2" {
   most_recent = true
 
   filter {
-    name   = "owner-alias"
-    values = ["amazon"]
-  }
-
-  filter {
     name   = "name"
     values = ["amzn2-ami-hvm-*-x86_64-ebs"]
   }
+
+  owners = ["137112412989"]  # Official Amazon Linux 2 AMIs
 }
 
 resource "aws_instance" "example_ec2" {
