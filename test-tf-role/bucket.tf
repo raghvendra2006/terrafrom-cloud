@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "example_bucket" {
-  bucket = "my-unique-bucket-name-ap-south-1"  # Change to a unique bucket name
+  bucket = "my-unique-bucket-name-1309824734a"  # Change to a unique bucket name
 
   tags = {
     Name        = "ExampleBucket"
