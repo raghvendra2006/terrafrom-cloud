@@ -2,6 +2,15 @@ data "aws_vpc" "default" {
   default = true
 }
 
+data "aws_subnet" "default" {
+  vpc_id = data.aws_vpc.default.id
+
+  filter {
+    name   = "default-for-az"
+    values = ["true"]
+  }
+}
+
 data "aws_ami" "amazon_linux_2" {
   most_recent = true
 
@@ -19,17 +28,9 @@ data "aws_ami" "amazon_linux_2" {
 resource "aws_instance" "example_ec2" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = "t2.micro"
-  subnet_id     = data.aws_subnet.default.id  # Requires default subnet in the VPC
+  subnet_id     = data.aws_subnet.default.id  # Now correctly references subnet data
 
   tags = {
     Name = "ExampleEC2Instance"
-  }
-}
-
-data "aws_subnet" "default" {
-  vpc_id = data.aws_vpc.default.id
-  filter {
-    name   = "default-for-az"
-    values = ["true"]
   }
 }
