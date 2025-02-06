@@ -28,7 +28,7 @@ data "aws_ami" "amazon_linux_2" {
 resource "aws_instance" "example_ec2" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = "t2.micro"
-  subnet_id     = data.aws_subnet.default.id  # Now correctly references subnet data
+  subnet_id     = tolist(data.aws_subnets.default.ids)[0]  # Select first default subnet
 
   tags = {
     Name = "ExampleEC2Instance"
