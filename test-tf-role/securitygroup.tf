@@ -1,7 +1,7 @@
-resource "aws_security_group" "main" {
+resource "aws_security_group" "sg1" {
   name        = "${var.environment}-${var.region}-sg"
   description = "Security group for ${var.environment} in ${var.region}"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.vpc1.id
 
 ingress {
     from_port   = 443
