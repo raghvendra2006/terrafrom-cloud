@@ -3,7 +3,7 @@ resource "aws_vpc" "vpc1" {
 
   tags = {
     Name            = "${var.environment}-vpc"
-    "VPC-Environment" = var.environment
+    "VPC-Environment" = var.environment_prod
   }
 }
 
@@ -12,6 +12,6 @@ resource "aws_vpc" "vpc2" {
 
   tags = {
     Name            = "${var.environment}-vpc"
-    "VPC-Environment" = var.environment1
+    "VPC-Environment" = var.environment_uat
   }
 }
