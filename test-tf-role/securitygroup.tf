@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg1" {
-  name        = "${var.environment}-${var.region}-sg"
-  description = "Security group for ${var.environment} in ${var.region}"
+  name        = "uat-ap-south-1-sg" #"${var.environment}-${var.region}-sg"
+  #description = "Security group for ${var.environment} in ${var.region}"
   vpc_id      = aws_vpc.vpc1.id
 
 # Rule for TCP 443
