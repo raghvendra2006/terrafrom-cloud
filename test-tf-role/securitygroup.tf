@@ -1,5 +1,4 @@
 resource "aws_security_group" "sg1" {
-  provider = aws.region1
   name        = "${var.environment}-${var.region}-sg"
   description = "Security group for ${var.environment} in ${var.region}"
   vpc_id      = aws_vpc.vpc1.id
