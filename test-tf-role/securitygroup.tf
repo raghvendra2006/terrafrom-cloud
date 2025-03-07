@@ -1,7 +1,7 @@
 resource "aws_security_group" "sg1" {
   provider = aws.region1
-  name        = "${var.environment1}-${var.region}-sg"
-  description = "Security group for ${var.environment1} in ${var.region}"
+  name        = "${var.environment1}-${var.region1}-sg"
+  description = "Security group for ${var.environment1} in ${var.region1}"
   vpc_id      = aws_vpc.vpc1.id
 
 # Rule for TCP 443
