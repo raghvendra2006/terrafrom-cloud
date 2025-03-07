@@ -1,3 +1,3 @@
 region = "ap-south-1"
-environment = "prod"
+environment = "uat"
 
