@@ -11,7 +11,3 @@ variable "environment" {
     error_message = "Allowed values for environment are 'prod', 'uat', or 'dev'."
   }
 }
-
-provider "aws" {
-  region = var.region
-}
