@@ -1,5 +1,3 @@
-region1 = "ap-south-1"
-region2 = "ap-south-2"
-environment1 = "prod"
-environment2 = "uat"
-environment3 = "dev"
+region = "ap-south-1"
+environment = "prod"
+
