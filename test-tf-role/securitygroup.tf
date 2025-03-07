@@ -14,6 +14,7 @@ resource "aws_security_group" "sg1" {
         (var.environment == "prod" ? ["172.16.1.0/32", "172.16.1.1/32"] : ["172.16.2.0/32", "172.16.2.1/32"])
     )
   }
+}
 
   # Rule for UDP 3306-3307
   ingress {
