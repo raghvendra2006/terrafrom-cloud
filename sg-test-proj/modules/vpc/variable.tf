@@ -19,7 +19,7 @@ variable "create_security_group" {
 variable "sg_name" {
   description = "The name of the security group"
   type        = string
-  default     = "example-security-group"
+  default     = "example-security-group1"
 }
 
 variable "region1" {
