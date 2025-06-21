@@ -5,6 +5,7 @@ terraform {
       version = "~> 4.49.0"
     }
   }
+}
 
 provider "aws" {
   region = "ap-south-1"
