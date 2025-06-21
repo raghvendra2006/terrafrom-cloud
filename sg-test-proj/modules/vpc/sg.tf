@@ -3,6 +3,9 @@ resource "aws_security_group" "example_sg" {
   vpc_id      = aws_vpc.main.id
   name        = var.sg_name
   description = "Allow specific ingress traffic"
+  lifecycle {
+  ignore_changes = [description]
+  }
 
   ingress {
     description = "Allow SSH from 2.2.2.2/32"
