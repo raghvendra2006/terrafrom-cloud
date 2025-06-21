@@ -4,7 +4,7 @@ resource "aws_security_group" "example_sg" {
   name        = var.sg_name
   description = "Allow specific ingress traffic"
   lifecycle {
-  ignore_changes = [description]
+  ignore_changes = [name]
   }
 
   ingress {
